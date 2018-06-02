@@ -1,5 +1,10 @@
 {
   "devDependencies": {
     "shadow-cljs": "^2.3.22"
+    "node-sass": "^4.9.0",
+  "scripts": {
+    "dev": "shadow-cljs watch app test",
+    "styles": "node-sass --include-path=./node_modules --output-style expanded --source-map true ./src/global-styles/main.scss ./public/css/main.css",
+    "styles-dev": "yarn styles; yarn styles -- --watch"
   }
 }
