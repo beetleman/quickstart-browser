@@ -1,10 +1,19 @@
 {
   "devDependencies": {
     "shadow-cljs": "^2.3.22"
+  },
+  "dependencies": {
+    "bulma": "^0.7.1",
+    "create-react-class": "^15.6.3",
     "node-sass": "^4.9.0",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0"
+  },
+  "license": "MIT",
   "scripts": {
     "dev": "shadow-cljs watch app test",
     "styles": "node-sass --include-path=./node_modules --output-style expanded --source-map true ./src/global-styles/main.scss ./public/css/main.css",
-    "styles-dev": "yarn styles; yarn styles -- --watch"
+    "styles-dev": "yarn styles; yarn styles --watch",
+    "release": "yarn styles && shadow-cljs release app"
   }
 }

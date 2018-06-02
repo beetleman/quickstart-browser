@@ -1,8 +1,7 @@
 /public/js
+/public/css/main.*
 /node_modules
 /target
-/yarn.lock
-/package-lock.json
 /.shadow-cljs
 /*.iml
 /.nrepl-port
