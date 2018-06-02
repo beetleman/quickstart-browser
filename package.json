@@ -12,8 +12,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "shadow-cljs watch app test",
-    "styles": "node-sass --include-path=./node_modules --output-style expanded --source-map true ./src/global-styles/main.scss ./public/css/main.css",
-    "styles-dev": "yarn styles; yarn styles --watch",
-    "release": "yarn styles && shadow-cljs release app"
+    "styles": "node-sass ./src/global-styles/main.scss ./public/css/main.css --include-path=./node_modules --source-map true",
+    "styles-dev": "yarn styles --output-style expanded; yarn styles --watch ./src/global-styles --recursive --output-style expanded",
+    "release": "yarn styles --output-style compressed && shadow-cljs release app"
   }
 }
