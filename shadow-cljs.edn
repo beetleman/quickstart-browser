@@ -4,12 +4,16 @@
 
  :dependencies
  [[cider/cider-nrepl "0.18.0-SNAPSHOT"]
-  [org.roman01la/cljss "1.6.2"]
+
+  [stylefy "1.5.1" :exclusions [reagent]]
+
   [re-frame "0.10.5" :exclusions [reagent]]
   [reagent "0.8.1" :exclusions [cljsjs/react
                                 cljsjs/create-react-class
                                 cljsjs/react-dom
                                 cljsjs/react-dom-server]]
+
+  [mount "0.1.12"]
   [bidi "2.1.3"]
   [venantius/accountant "0.2.4"]]
 
