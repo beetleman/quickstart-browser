@@ -2,7 +2,7 @@
   (:require [starter.ui.links :as links]))
 
 (defn navbar [& navbar-start]
-  [:nav.navbar.has-shadow.is-spaced
+  [:nav.navbar.has-shadow.is-fixed-top
    [:div.container
     [:div.navbar-brand
      [:a.navbar-item
