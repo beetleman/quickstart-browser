@@ -1,7 +1,7 @@
 (ns starter.router.core
   (:require [bidi.bidi :as bidi]
             [accountant.core :as accountant]
-            [re-frame.core :refer [dispatch]]
+            [re-frame.core :refer [dispatch subscribe]]
             [starter.router.routes :as routes]
             [mount.core :refer [defstate]]))
 
@@ -20,3 +20,10 @@
 (defstate router
   :start (accountant/configure-navigation! {:nav-handler  nav-handler
                                             :path-exists? path-exists?}))
+
+(defmulti page-handler :handler)
+
+(defn current-page []
+  (let [route (subscribe [:route])]
+    "fff"
+    [page-handler @route]))

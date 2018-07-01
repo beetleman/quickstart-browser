@@ -1,25 +1,18 @@
 (ns starter.browser
   (:require [reagent.core :as reagent]
-            [re-frame.core :refer [dispatch-sync subscribe]]
+            [re-frame.core :refer [dispatch-sync]]
             [stylefy.core :as stylefy]
             [mount.core :as mount]
             [starter.events]
             [starter.subs]
-            [starter.router.core :as router]
-            [starter.ui.buttons :as buttons]
-            [starter.ui.links :as links]))
+            [starter.pages.core :as pages]
+            [starter.router.core :as router]))
 
 (defonce dev-counter (reagent/atom 0))
 
 (defn ui []
-  (let [route (subscribe [:route])]
-    [:div.container.is-fluid {:key @dev-counter}
-     [buttons/primary {:href "/fff"} "fake"]
-     [links/primary "index" :index]
-     [links/primary "foo" :foo]
-     [links/primary "bar" :bar]
-     [links/primary "baz" :baz :id 12]
-     [:p "path:" (:path @route)]]))
+  [:div {:class-name @dev-counter} ;; triger changes after code reload
+   [pages/main]])
 
 (defn render []
   (reagent/render [ui]

@@ -1,6 +1,5 @@
 (ns starter.router.routes)
 
-(def app ["/" {""          :index
-               "foo"       :foo
-               "bar"       :bar
-               ["baz/" :id] :baz}])
+(def app ["/" {""            :index
+               "about"       :about
+               ["page/" :id] :page}])
